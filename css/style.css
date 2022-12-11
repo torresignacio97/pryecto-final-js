@@ -1,0 +1,78 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #FFF3D1;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    
+}
+
+/* Main */
+.main {
+    max-width: 980px;
+    padding: 2rem;
+    margin: 0 auto;
+    background-color: white;
+    min-height: 50vh;
+}
+
+
+/* Header */
+.header {
+    padding: 5rem;
+    background-color: bisque;
+    background-image: url('../img/bg-image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+/*Content*/ 
+.form {
+    width: 100%;
+    display: flex;
+}
+
+.canciones {
+    padding: 0;
+    list-style-type: none;
+}
+
+.cancion {
+    display: flex;
+    cursor: pointer;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    transition: background-color .3s ease-in-out;
+}
+
+.cancion:nth-child(even) {
+    background-color: #efd0c0; 
+}
+
+.cancion:hover {
+    background-color: #124E78;
+    color: white
+}
+
+.mostrar {
+    background-color: #F2BB05;
+    border: none;
+    padding: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.letra {
+    font-size: 1.5rem;
+}
