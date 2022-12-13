@@ -22,11 +22,13 @@ form.addEventListener("submit", event => {
 
 // Buscar canciones o artistas
 async function buscarCanciones(search) {
-    const request = await fetch(`${API}/suggest/${search}`)
-    const response = await request.json()
-    const canciones = response
-    
-    mostrarCanciones(canciones)
+    fetch(`${API}/suggest/${search}`)
+        .then(response => response.json())
+        .then(resultado => {
+            console.log(resultado);
+            const canciones = resultado;
+            mostrarCanciones(canciones);
+        })
 }
 
 // Mostrar canciones
@@ -48,11 +50,13 @@ function mostrarCanciones(canciones) {
 }
 
 // Mostrar más canciones
-async function mostrarMasCanciones(req) {
+function mostrarMasCanciones(req) {
     console.log(req)
-    const request = await fetch(req)
-    const response = await request.json()
-    console.log(response)
+    fetch(req)
+        .then(response => response.json())
+        .then(resultado => {
+            console.log(resultado)
+        })
 }
 
 content.addEventListener("click", event => {
@@ -65,12 +69,14 @@ content.addEventListener("click", event => {
     }
 })
 // Obtener letra de cancion
-async function obtenerCancion(titulo, artista) {
-    const request = await fetch(`${API}/v1/${artista}/${titulo}`)
-    const response = await request.json()
-    const letra = response.letra
-    
-    mostarCancion(titulo, artista, letra)
+function obtenerCancion(titulo, artista) {
+    fetch(`${API}/v1/${artista}/${titulo}`)
+        .then(response => response.json)
+        .then(resultado => {
+            console.log(resultado);
+            const letra = resultado.letra
+            mostarCancion(titulo, artista, letra)
+        })
 }
 
 // Mostrar letra 
